@@ -6,5 +6,5 @@ integer, float gibi değişken tipleri, aralarında herhangi bir fark olmadan `n
 
 ### 2. string
 Tüm text değerleri birer string olarak kabul edilir. 
-`'Merhaba'`, `"Selam"`, `"`Merhaba`"`
+`'Merhaba'`, `"Selam"`, Tek tırnak, çift tırnak ve backtick işareti `` arasında yazılan her text bir string olarak kabul edilir. 
 
