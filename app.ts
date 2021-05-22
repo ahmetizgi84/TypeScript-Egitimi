@@ -1,1 +1,1 @@
-console.log("your app goes here")
+console.log("time to get start...")
