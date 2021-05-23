@@ -1,1 +1,2 @@
-console.log("your app goes here");
+"use strict";
+console.log("time to get start...");

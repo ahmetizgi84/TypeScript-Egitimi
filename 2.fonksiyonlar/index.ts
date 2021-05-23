@@ -68,7 +68,7 @@ function add5(n1: number, n2: number): number {
 
 let combineValues1: Function;
 combineValues1 = add5
-combineValues1 = 5; // Bu şekildeki bir yazım sonucunda typescript değişkenin sadece fonksiyon tipinde bir değer alabileceğini hatırlatıyor.
+//combineValues1 = 5; // Bu şekildeki bir yazım sonucunda typescript değişkenin sadece fonksiyon tipinde bir değer alabileceğini hatırlatıyor.
 console.log(combineValues1(8, 8))
 
 /**

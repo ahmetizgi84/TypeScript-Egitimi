@@ -1,3 +1,4 @@
+"use strict";
 // Fonksiyonun aldığı n1 ve n2 parametreleri şu haliyle 'any' olarak atanır.
 function add1(n1, n2) {
     return n1 + n2;
@@ -47,13 +48,13 @@ nmb4 = "34"; // development aşmadında typescript bizi uyarıyor. number olmas�
 */
 var person1 = {
     name: "Ahmet",
-    age: 35
+    age: 35,
 };
 console.log(person1.name); // typescript obje içinde olmayan key değerini hemen farkeder. Console da undefined döner
 // Aşağıdaki tanımlamada ise object olarak tanımlanan değişkenin key değerlerinin de tiplerinin belirlendiği görülmektedir.
 var person2 = {
     name: "Ahmet",
-    age: 35
+    age: 35,
 };
 console.log(person2.name); // typescript obje içinde olmayan key değerini hemen farkeder. Console da undefined döner
 // *********************************************** TUPPLE AND ARRAY **************************************************************
@@ -124,3 +125,35 @@ var combinedAges2 = combine2(30, 26);
 console.log("Combined ages2: ", combinedAges2);
 var combinedNames2 = combine2('Max', 3);
 console.log("Combined names2: ", combinedNames2);
+function combine3(inp1, inp2, resultConversion) {
+    var result;
+    if (typeof inp1 === 'number' && typeof inp2 === 'number') {
+        result = inp1 + inp2;
+    }
+    else if (typeof inp1 === 'string' && typeof inp2 === 'string') {
+        result = inp1.toString() + inp2.toString();
+    }
+    if (resultConversion === "as-number") {
+        return +result; // === parseFloat(result)
+    }
+    else {
+        return result.toString();
+    }
+}
+var combinedAges3 = combine3(30, 26, "as-number");
+console.log("Combined ages2: ", combinedAges3);
+var combinedStringAges3 = combine3("30", "26", "as-number");
+console.log("Combined string ages3: ", combinedStringAges3);
+var combinedNames3 = combine3('Max', 3, "as-text");
+console.log("Combined names2: ", combinedNames3);
+// resultConversion parametresi string olarak sadece iki farklı kelimeyi kabul eder. 
+function combine4(inp1, inp2, resultConversion) {
+    var result;
+    if (typeof inp1 === 'number' && typeof inp2 === 'number' || resultConversion === "as-number") {
+        result = +inp1 + +inp2;
+    }
+    else if (typeof inp1 === 'string' && typeof inp2 === 'string') {
+        result = inp1.toString() + inp2.toString();
+    }
+    return result;
+}
